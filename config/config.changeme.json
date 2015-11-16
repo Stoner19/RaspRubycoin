@@ -1,10 +1,10 @@
 [
   {
     "name": "local-qt",
-    "coin": "xpy",
+    "coin": "rby",
     "server": "localhost",
-    "rpcuser": "paycoinrpc",
+    "rpcuser": "rubycoinrpc",
     "rpcpassword": "randomPasswordHere",
-    "rpcport": "8999"
+    "rpcport": "5938"
   }
 ]
