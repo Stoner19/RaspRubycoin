@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('PaycoinRpiWallet', [
+angular.module('rubycoinRpiWallet', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
@@ -121,16 +121,16 @@ angular.module('PaycoinRpiWallet', [
                 templateUrl: 'views/console.html'
             })
   })
-    .controller('MainCtrl', function ($scope, $rootScope, $localStorage, paycoind) {
+    .controller('MainCtrl', function ($scope, $rootScope, $localStorage, rubycoind) {
 
-        paycoind.getServerInfo()
+        rubycoind.getServerInfo()
             .then(function(response){
                 $localStorage.serverList = response;
                 $scope.serverList = response;
             });
 
         $scope.changeServer = function(index){
-            paycoind.setServerIndex(index);
+            rubycoind.setServerIndex(index);
             $scope.chosenServer = $localStorage.serverList[index];
 
             $localStorage.chosenServer = $localStorage.serverList[index];
@@ -139,10 +139,10 @@ angular.module('PaycoinRpiWallet', [
 
         if($localStorage.chosenServerIndex) {
             $scope.changeServer($localStorage.chosenServerIndex);
-            //paycoind.setServerIndex($localStorage.chosenServerIndex);
+            //rubycoind.setServerIndex($localStorage.chosenServerIndex);
         } else {
             $scope.changeServer(0);
-            //paycoind.setServerIndex(0);
+            //rubycoind.setServerIndex(0);
         }
 
         $localStorage.chosenServer = $localStorage.serverList[0];
@@ -151,13 +151,13 @@ angular.module('PaycoinRpiWallet', [
         $localStorage.app = $rootScope.app;
 
         $scope.refreshInfo = function() {
-            paycoind.getInfo()
+            rubycoind.getInfo()
                 .then(function (response) {
                     $rootScope.getInfo = response;
                 }
             );
             console.log("recentTransactions ");
-            paycoind.listTransactions(10)
+            rubycoind.listTransactions(10)
                 .then(function(response){
                     $rootScope.listTransactions = response;
                 });
@@ -167,22 +167,22 @@ angular.module('PaycoinRpiWallet', [
 
         $scope.$watch('chosenServer', function(){
             console.log("chosenServer changed!");
-            paycoind.listAccounts()
+            rubycoind.listAccounts()
                 .then(function (response) {
                     $scope.accounts = response;
                     $localStorage.accounts = response;
                     $localStorage.accounts.serverIndex = $localStorage.chosenServerIndex;
                 });
-            paycoind.getInfo()
+            rubycoind.getInfo()
                 .then(function (response) {
                     $rootScope.getInfo = response;
                 }
             );
-            paycoind.listTransactions()
+            rubycoind.listTransactions()
                 .then(function(response){
                     $rootScope.listTransactions = response;
                 });
-            paycoind.listMinting()
+            rubycoind.listMinting()
                 .then(function(response){
                     $localStorage.listMinting = response;
                     $rootScope.listMinting = response;

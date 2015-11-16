@@ -1,11 +1,11 @@
 'use strict';
 
-angular.module('PaycoinRpiWallet')
-    .controller('OptionsCtrl', function ($scope, $rootScope, paycoind) {
+angular.module('rubycoinRpiWallet')
+    .controller('OptionsCtrl', function ($scope, $rootScope, rubycoind) {
         $rootScope.app.curTitle = "Options";
 
         $scope.addserver = function(){
-            paycoind.addserver($scope.newserver)
+            rubycoind.addserver($scope.newserver)
                 .then(function(response){
                     console.log(response);
                 });

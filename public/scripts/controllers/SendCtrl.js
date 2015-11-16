@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('PaycoinRpiWallet')
-    .controller('SendCtrl', function ($scope, $rootScope, $localStorage, $http, paycoind) {
+angular.module('rubycoinRpiWallet')
+    .controller('SendCtrl', function ($scope, $rootScope, $localStorage, $http, rubycoind) {
 
         $scope.send = {};
 
@@ -23,7 +23,7 @@ angular.module('PaycoinRpiWallet')
 
         $scope.sendTo = function(add){
             console.log(add.address + " clicked");
-            $scope.send.paycoinaddress = add.address;
+            $scope.send.rubycoinaddress = add.address;
             $scope.address_label = add.label;
         };
 
@@ -35,13 +35,13 @@ angular.module('PaycoinRpiWallet')
                 console.log("chosenServer locked");
                 console.log($scope.send);
                 if($localStorage.chosenServer.stakingOnly){
-                    paycoind.walletLock();
+                    rubycoind.walletLock();
                 }
-                paycoind.unlock($scope.send.passphrase, 15, false)
+                rubycoind.unlock($scope.send.passphrase, 15, false)
                     .then(function(response){
                         console.log("unlock response");
                         console.log(response);
-                        paycoind.sendToAddress($scope.send)
+                        rubycoind.sendToAddress($scope.send)
                             .then(function(response){
                                 console.log("sendToAddress response");
                                 console.log(response);
@@ -50,10 +50,10 @@ angular.module('PaycoinRpiWallet')
                                 } else {
                                     $scope.error_code = response.code;
                                 }
-                                paycoind.walletLock()
+                                rubycoind.walletLock()
                                     .then(function(){
                                         if($localStorage.chosenServer.stakingOnly) {
-                                            paycoind.unlock($scope.send.passphrase, 32140800, true)
+                                            rubycoind.unlock($scope.send.passphrase, 32140800, true)
                                                 .then(function (response) {
                                                     console.log("unlock response");
                                                     console.log(response);
@@ -71,7 +71,7 @@ angular.module('PaycoinRpiWallet')
                     })
             } else {
                 console.log("chosenServer not locked");
-                paycoind.sendToAddress($scope.send)
+                rubycoind.sendToAddress($scope.send)
                     .then(function(response){
                         console.log(response);
                         if(!response.code) {
@@ -86,7 +86,7 @@ angular.module('PaycoinRpiWallet')
         $scope.addaddress = function(){
             var payload = {
                 label: $scope.address_label,
-                address: $scope.send.paycoinaddress
+                address: $scope.send.rubycoinaddress
             };
 
             $http.post('/api/addtoaddressbook', payload)
@@ -103,7 +103,7 @@ angular.module('PaycoinRpiWallet')
                 });
         };
 
-        paycoind.listAccounts()
+        rubycoind.listAccounts()
             .then(function (response) {
                 $scope.accounts = response;
                 $localStorage.accounts = response;

@@ -1,10 +1,10 @@
 'use strict';
 
-angular.module('PaycoinRpiWallet')
-    .controller('TransactionsCtrl', function ($scope, $rootScope, $http, $localStorage, $state, $stateParams, paycoind) {
+angular.module('rubycoinRpiWallet')
+    .controller('TransactionsCtrl', function ($scope, $rootScope, $http, $localStorage, $state, $stateParams, rubycoind) {
         $rootScope.app.curTitle = "Transactions";
 
-        paycoind.listAllTransactions()
+        rubycoind.listAllTransactions()
             .then(function(response){
                 $scope.transactions = response;
                 $localStorage.transactions = response;

@@ -1,10 +1,10 @@
 'use strict';
 
-angular.module('PaycoinRpiWallet')
-    .controller('PeerInfoCtrl', function ($scope, $rootScope, paycoind) {
+angular.module('rubycoinRpiWallet')
+    .controller('PeerInfoCtrl', function ($scope, $rootScope, rubycoind) {
         $rootScope.app.curTitle = "Peer Info";
 
-        paycoind.getPeerInfo()
+        rubycoind.getPeerInfo()
             .then(function(response){
                 console.log(response.data);
                 $scope.peers = response.data;

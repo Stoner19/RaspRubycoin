@@ -1,10 +1,10 @@
-angular.module('PaycoinRpiWallet')
-    .factory('paycoind', function($http, $q) {
+angular.module('rubycoinRpiWallet')
+    .factory('rubycoind', function($http, $q) {
         var service = {
             checkWallet: checkWallet,
             decodeRawTransaction: decodeRawTransaction, // <hex string>
-            dumpPrivKey: dumpPrivKey, // <paycoinaddress>
-            getAccount: getAccount, // <paycoinaddress>
+            dumpPrivKey: dumpPrivKey, // <rubycoinaddress>
+            getAccount: getAccount, // <rubycoinaddress>
             getAccountAddress: getAccountAddress,
             getAddressesByAccount: getAddressesByAccount,
             getBlock: getBlock, // <hash> [txinfo] [txdetails]
@@ -25,12 +25,12 @@ angular.module('PaycoinRpiWallet')
             getRawMemPool: getRawMemPool,
             getRawTransaction: getRawTransaction, // <txid> [verbose=0]
             getReceivedByAccount: getReceivedByAccount, // <account> [minconf=1]
-            getReceivedByAddress: getReceivedByAddress, // <paycoinaddress> [minconf=1]
+            getReceivedByAddress: getReceivedByAddress, // <rubycoinaddress> [minconf=1]
             getTransaction: getTransaction,
             getTxOut: getTxOut, // "txid" n (includemempool)
             getWork: getWork, // [data]
             help: help,
-            importPrivKey: importPrivKey, // <paycoinprivkey> [label]
+            importPrivKey: importPrivKey, // <rubycoinprivkey> [label]
             keyPoolRefill: keyPoolRefill,
             listAccounts: listAccounts,
             listAddressGroupings: listAddressGroupings,
@@ -45,19 +45,19 @@ angular.module('PaycoinRpiWallet')
             repairWallet: repairWallet,
             reserveBalance: reserveBalance,// [<reserve> [amount]]
             sendAlert: sendAlert, // <message> <privatekey> <minver> <maxver> <priority> <id> [cancelupto]
-            sendFrom: sendFrom, // <fromaccount> <topaycoinaddress> <amount> [minconf=1] [comment] [comment-to]
+            sendFrom: sendFrom, // <fromaccount> <torubycoinaddress> <amount> [minconf=1] [comment] [comment-to]
             sendMany: sendMany,//<fromaccount> {address:amount,...} [minconf=1] [comment]
             sendRawTransaction: sendRawTransaction, //<hex string> [checkinputs=0]
-            sendToAddress: sendToAddress,// <paycoinaddress> <amount> [comment] [comment-to]
-            setAccount: setAccount, //<paycoinaddress> <account>
+            sendToAddress: sendToAddress,// <rubycoinaddress> <amount> [comment] [comment-to]
+            setAccount: setAccount, //<rubycoinaddress> <account>
             setGenerate: setGenerate, // <generate> [genproclimit]
             setTxFee: setTxFee, //<amount>
-            signMessage: signMessage, //<paycoinaddress> <message>
+            signMessage: signMessage, //<rubycoinaddress> <message>
             signRawTransaction: signRawTransaction, // <hex string> [{"txid":txid,"vout":n,"scriptPubKey":hex},...] [<privatekey1>,...] [sighashtype="ALL"]
             stop: stop,
             submitBlock: submitBlock, //<hex data> [optional-params-obj]
-            validateAddress: validateAddress, // <paycoinaddress>
-            verifyMessage: verifyMessage, // <paycoinaddress> <signature> <message>
+            validateAddress: validateAddress, // <rubycoinaddress>
+            verifyMessage: verifyMessage, // <rubycoinaddress> <signature> <message>
             walletLock: walletLock,
             walletPassphrase: walletPassphrase, // <passphrase> <timeout> [mintonly]
             walletPassphraseChange: walletPassphraseChange, // <oldpassphrase> <newpassphrase>
@@ -326,7 +326,7 @@ angular.module('PaycoinRpiWallet')
 
             var payload = {
                 index: service.serverIndex,
-                paycoinaddress: sendPayload.paycoinaddress,
+                rubycoinaddress: sendPayload.rubycoinaddress,
                 amount: sendPayload.amount
             };
 

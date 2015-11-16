@@ -1,10 +1,10 @@
 'use strict';
 
-angular.module('PaycoinRpiWallet')
-    .controller('MintingCtrl', function ($scope, $rootScope, $localStorage, $state, $stateParams, paycoind) {
+angular.module('rubycoinRpiWallet')
+    .controller('MintingCtrl', function ($scope, $rootScope, $localStorage, $state, $stateParams, rubycoind) {
         $rootScope.app.curTitle = "Minting";
 
-        paycoind.listMinting()
+        rubycoind.listMinting()
             .then(function(response){
                 $localStorage.listMinting = response;
                 $rootScope.listMinting = response;

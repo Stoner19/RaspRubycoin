@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('PaycoinRpiWallet')
-    .controller('BlockInfoCtrl', function ($scope, $rootScope, paycoind) {
+angular.module('rubycoinRpiWallet')
+    .controller('BlockInfoCtrl', function ($scope, $rootScope, rubycoind) {
         $rootScope.app.curTitle = "Block Info";
 
 

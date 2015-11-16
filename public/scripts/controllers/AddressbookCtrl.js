@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('PaycoinRpiWallet')
+angular.module('rubycoinRpiWallet')
     .controller('AddressbookCtrl', function ($scope, $rootScope, $http) {
         $rootScope.app.curTitle = "Address Book";
 
@@ -17,7 +17,7 @@ angular.module('PaycoinRpiWallet')
         $scope.addaddress = function(){
             var payload = {
                 label: $scope.address_label,
-                address: $scope.send.paycoinaddress
+                address: $scope.send.rubycoinaddress
             };
 
             $http.post('/api/addtoaddressbook', payload)

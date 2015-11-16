@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('PaycoinRpiWallet')
-    .controller('DashboardCtrl', function ($scope, $rootScope, $http, paycoind) {
+angular.module('rubycoinRpiWallet')
+    .controller('DashboardCtrl', function ($scope, $rootScope, $http, rubycoind) {
         $rootScope.app.curTitle = "Dashboard";
 
     }

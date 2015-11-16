@@ -120,27 +120,27 @@
                             <span><h6 class="pull-right visible-lg-block visible-md-block">txid: <a ui-sref="txidinfo({txid:transaction.txid})">{{ transaction.txid }}</a></h6></span>
                         </div>
                         <div class="clear" ng-if="transaction.category == 'send'">
-                            <div><span style="color:#0099cc"><b>{{transaction.amount}} Paycoin</b></span><span class="label bg-light m-l-sm" style="background-color: #0099cc; color:#FFFFFF">{{transaction.label}}</span></div>
+                            <div><span style="color:#0099cc"><b>{{transaction.amount}} rubycoin</b></span><span class="label bg-light m-l-sm" style="background-color: #0099cc; color:#FFFFFF">{{transaction.label}}</span></div>
                             <div>
-                                <div class="text-ellipsis m-t-xs"><i>You have sent Paycoin to </i><br><b><a ui-sref="addressinfo({address:transaction.address})">{{ transaction.address }}</a></b> from <strong>"{{transaction.account}}"</strong></div>
+                                <div class="text-ellipsis m-t-xs"><i>You have sent rubycoin to </i><br><b><a ui-sref="addressinfo({address:transaction.address})">{{ transaction.address }}</a></b> from <strong>"{{transaction.account}}"</strong></div>
                             </div>
                         </div>
                         <div class="clear" ng-if="transaction.category == 'stake'">
-                            <div><span style="color:#0099cc"><b>{{transaction.amount}} Paycoin</b></span><span class="label bg-light m-l-sm" style="background-color: #0099cc; color:#FFFFFF">{{transaction.label}}</span></div>
+                            <div><span style="color:#0099cc"><b>{{transaction.amount}} rubycoin</b></span><span class="label bg-light m-l-sm" style="background-color: #0099cc; color:#FFFFFF">{{transaction.label}}</span></div>
                             <div>
-                                <div class="text-ellipsis m-t-xs"><i>You have staked Paycoin</i></div>
+                                <div class="text-ellipsis m-t-xs"><i>You have staked rubycoin</i></div>
                             </div>
                         </div>
                         <div class="clear" ng-if="transaction.category == 'receive'">
-                            <div><span style="color:#006699"><b>{{transaction.amount}} Paycoin</b></span><span class="label bg-light m-l-sm" style="background-color: #006699; color:#ffffff">{{transaction.label}}</span></div>
+                            <div><span style="color:#006699"><b>{{transaction.amount}} rubycoin</b></span><span class="label bg-light m-l-sm" style="background-color: #006699; color:#ffffff">{{transaction.label}}</span></div>
                             <div>
-                                <div class="text-ellipsis m-t-xs"><i>You have received Paycoin at </i><br><b>{{transaction.account}} <a ui-sref="addressinfo({address:transaction.address})">{{ transaction.address }}</a></b></div>
+                                <div class="text-ellipsis m-t-xs"><i>You have received rubycoin at </i><br><b>{{transaction.account}} <a ui-sref="addressinfo({address:transaction.address})">{{ transaction.address }}</a></b></div>
                             </div>
                         </div>
                         <div class="clear" ng-if="transaction.category == 'immature'">
-                            <div><span style="color:#006699"><b>{{transaction.amount}} Paycoin Staking</b></span><span class="label bg-light m-l-sm" style="background-color: #006699; color:#ffffff">{{transaction.label}}</span></div>
+                            <div><span style="color:#006699"><b>{{transaction.amount}} rubycoin Staking</b></span><span class="label bg-light m-l-sm" style="background-color: #006699; color:#ffffff">{{transaction.label}}</span></div>
                             <div>
-                                <div class="text-ellipsis m-t-xs"><i>You currently have {{transaction.amount}} Paycoin Staking</i><br><b>Confirmations {{ transaction.confirmations }} of 120</b></div>
+                                <div class="text-ellipsis m-t-xs"><i>You currently have {{transaction.amount}} rubycoin Staking</i><br><b>Confirmations {{ transaction.confirmations }} of 120</b></div>
                             </div>
                         </div>
                         <div class="clear" ng-if="transaction.category == 'move'">

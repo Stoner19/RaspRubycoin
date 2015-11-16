@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('PaycoinRpiWallet')
+angular.module('rubycoinRpiWallet')
     .controller('ContributeCtrl', function ($scope, $rootScope) {
         $rootScope.app.curTitle = "Contribute";
     }

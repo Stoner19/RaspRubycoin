@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('PaycoinRpiWallet')
-    .controller('LockWalletCtrl', function ($scope, $rootScope, $localStorage, paycoind) {
+angular.module('rubycoinRpiWallet')
+    .controller('LockWalletCtrl', function ($scope, $rootScope, $localStorage, rubycoind) {
         $rootScope.app.curTitle = "Lock Wallet";
 
         $scope.walletLock = function() {
@@ -9,7 +9,7 @@ angular.module('PaycoinRpiWallet')
             $localStorage.chosenServer.locked = true;
             $localStorage.chosenServer.stakingOnly = false;
 
-            paycoind.walletLock()
+            rubycoind.walletLock()
                 .then(function (response) {
                     console.log(response);
                     $scope.response = response.data;

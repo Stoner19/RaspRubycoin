@@ -1,18 +1,18 @@
 'use strict';
 
-angular.module('PaycoinRpiWallet')
-    .controller('ConsoleCtrl', function ($scope, $rootScope, $localStorage, paycoind) {
+angular.module('rubycoinRpiWallet')
+    .controller('ConsoleCtrl', function ($scope, $rootScope, $localStorage, rubycoind) {
         $rootScope.app.curTitle = "Console... with Buttons!";
 
         $scope.checkWallet = function(){
-            paycoind.checkWallet()
+            rubycoind.checkWallet()
                 .then(function(response){
                     $scope.checkWalletResponse = response.data;
                 });
         };
 
         $scope.listUnspent = function(){
-            paycoind.listUnspent()
+            rubycoind.listUnspent()
                 .then(function(response){
                     $scope.listUnspentResponse = response.data;
                 })

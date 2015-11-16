@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('PaycoinRpiWallet')
+angular.module('rubycoinRpiWallet')
     .controller('AddNodeCtrl', function ($scope, $rootScope, $http) {
         $rootScope.app.curTitle = "Add Node";
 
