@@ -1,4 +1,4 @@
-# RaspRubycoin
+# RaspRubyCoin
 
 ## Prerequisites
 
@@ -50,8 +50,8 @@ Note: 15.04 seems to be pretty new and nodejs is not built for it yet. If you ge
 ## Setup
 
 Clone this repository
-`git clone https://github.com/tvl83/RaspPaycoin <directory>`.
-The `<directory>` is optional if you do not want the default folder name of `RaspPaycoin`.
+`git clone https://github.com/tvl83/RaspRubyCoin <directory>`.
+The `<directory>` is optional if you do not want the default folder name of `RaspRubyCoin`.
 
 In the root directory of the project run `npm install` and `sudo npm install bower -g`. Let everything install, then `cd public` and run `bower install`.
 
@@ -59,17 +59,17 @@ In the root directory of the project run `npm install` and `sudo npm install bow
 
 Rename the `/config/config.changeme.json` to `config.json` with `mv config.changeme.json config.json`
  
-Within the `config.json` change the rpcuser, rpcpassword, and rpcport to what ever is set in your `paycoin.conf`.
+Within the `config.json` change the rpcuser, rpcpassword, and rpcport to what ever is set in your `rubycoin.conf`.
 
-The `paycoin.conf` that is on the raspberryPi is configured with the default settings so you wont have to do anything. On any other system you need to set it to the correct parameters.
+The `rubycoin.conf` that is on the raspberryPi is configured with the default settings so you wont have to do anything. On any other system you need to set it to the correct parameters.
 
 ## Figure Out The rPi IP Address
 
-There are a couple ways to figure this out. The most straight forward way is to use your router and look at connected devices and get the IP from that. The device name is `paycoind`. 
+There are a couple ways to figure this out. The most straight forward way is to use your router and look at connected devices and get the IP from that. The device name is `rubycoind`. 
 
 If you have an iPhone or Android phone you can download a free program called `FING` which detects all the detected devices on your wifi connection.
 
-Using `FING` it'll be `paycoind` device. 
+Using `FING` it'll be `rubycoind` device. 
 
 ## Run the server
 
