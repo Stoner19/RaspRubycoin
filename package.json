@@ -1,5 +1,5 @@
 {
-  "name": "paycoin-wallet-rpi",
+  "name": "rubycoin-wallet-rpi",
   "version": "0.1.5",
   "private": true,
   "scripts": {
