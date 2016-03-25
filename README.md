@@ -61,7 +61,7 @@ Rename the `/config/config.changeme.json` to `config.json` with `mv config.chang
  
 Within the `config.json` change the rpcuser, rpcpassword, and rpcport to what ever is set in your `rubycoin.conf`.
 
-The `rubycoin.conf` that is on the raspberryPi is configured with the default settings so you wont have to do anything. On any other system you need to set it to the correct parameters.
+RubyCoin's rpcport is `5938` and by default the `config.json` is already set to that.
 
 ## Figure Out The rPi IP Address
 
@@ -94,9 +94,3 @@ The views are just a free bootstrap admin panel ([SB Bootstrap 2](http://startbo
 This project is supported by the community. 
 
 BTC: `1Q2ZEQcMftL6tGKVXWNobwTZDFVDQx2aGM`
-
-XPY: `PURNbr88icJ7YX47o6jrdWSh7PQzfrKWrk`
-
-Any donations are greatly appreciated. This is a project created 100% for free on a volunteer basis.
-
-Thank you!
